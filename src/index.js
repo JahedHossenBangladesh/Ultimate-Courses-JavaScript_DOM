@@ -2,13 +2,19 @@ import '../assets/css/style.css';
 
 
 const app = document.getElementById('app');
-const div = document.createElement('div');
-const text = document.createTextNode('DOM!')
-const comment = document.createComment('This is comment')
 
+// app.innerHTML = `
+// <h1>Javascript DOM</h1>
+// `
+// app.innerText = 'some text here'
 
-div.append(comment);
-div.append(text);
-app.append(div);
-console.log(app,div);
-console.log( div);
+const h1 = document.createElement('h1')
+
+h1.innerText = 'Javascript DOM'
+h1.innerText += ' Ultimate JS'
+
+app.append(h1);
+
+console.log(app.innerHTML)
+console.log(app.innerText)
+console.log(app.textContent)
