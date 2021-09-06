@@ -8,32 +8,14 @@ app.innerHTML = `
 
 
 `
-// createElement
-function createInput({label,type='text'}){
-    const labelEl= document.createElement('label');
-    const inputEl = document.createElement('input');
-    inputEl.type = type;
-    labelEl.innerText = label;
-    labelEl.append(inputEl)
-    return labelEl;
-}
-const inputFromDom = createInput({label:"name"})
 
-app.append(inputFromDom);
-console.log(inputFromDom)
-// string template 
-function createInput2({label,type='text'}){
-    return `
-    <label>
-    ${label}
-    <input type="${type}" placeholder="${label}"/>
-    </label>
-    
-    `
-}
-const inputFromDom2 = createInput2({
-    label:'Email',
-    type:'email'
+const data = ['apple','banana','pineapple','more']
+
+const fragment = document.createDocumentFragment();
+data.forEach(name => {
+    const li = document.createElement('li');
+    li.innerText =name;
+    fragment.append(li)
 })
 
-app.innerHTML += inputFromDom2;
+app.append(fragment)
